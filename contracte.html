@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contracte - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span>Noutăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span>Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span class="font-medium">Contracte</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span>Cantină</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Facilități</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span>Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <a href="facultate.html"
+                    class="flex items-center gap-2 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 mb-2 transition-colors">
+                    <span class="material-icons-round text-sm">arrow_back</span> Înapoi la Facultate
+                </a>
+                <h2 class="text-3xl font-bold dark:text-white">Contractul Disciplinelor</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Semnătură Digitală • Anul III • 2025-2026</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-bold text-xs flex items-center gap-1">
+                    <span class="material-icons-round text-sm">warning</span>
+                    STATUS: NESEMNAT
+                </span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Main Content: Subjects List -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Obligatory -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2 dark:text-white">
+                        <span class="material-icons-round text-blue-600">bookmark</span>
+                        Discipline Obligatorii (Impuse)
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                            <span class="font-medium text-sm dark:text-slate-200">Arhitectura Calculatoarelor</span>
+                            <span class="text-xs font-bold bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">6
+                                ECTS</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                            <span class="font-medium text-sm dark:text-slate-200">Inginerie Software</span>
+                            <span class="text-xs font-bold bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">5
+                                ECTS</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                            <span class="font-medium text-sm dark:text-slate-200">Baze de Date</span>
+                            <span class="text-xs font-bold bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">5
+                                ECTS</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                            <span class="font-medium text-sm dark:text-slate-200">Sisteme de Operare</span>
+                            <span class="text-xs font-bold bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">5
+                                ECTS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2 dark:text-white">
+                        <span class="material-icons-round text-green-600">check_circle</span>
+                        Discipline Opționale (Alese)
+                    </h3>
+                    <div class="space-y-3">
+                        <div
+                            class="flex justify-between items-center p-3 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/30 rounded-xl">
+                            <span class="font-medium text-sm dark:text-slate-200">Grafică pe Calculator</span>
+                            <span
+                                class="text-xs font-bold bg-green-200 dark:bg-green-800 text-green-800 dark:text-green-200 px-2 py-1 rounded">ALES</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar: Summary & Sign -->
+            <div class="md:col-span-1">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 sticky top-24">
+                    <h3 class="font-bold text-lg mb-6 dark:text-white">Sumar Credite</h3>
+
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-slate-500">Credite Impuse</span>
+                        <span class="font-bold">54</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-slate-500">Credite Opționale</span>
+                        <span class="font-bold">6</span>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center mb-8">
+                        <span class="font-bold text-primary">TOTAL ANUAL</span>
+                        <span class="font-bold text-xl">60 ECTS</span>
+                    </div>
+
+                    <div class="flex items-start gap-2 mb-6">
+                        <input type="checkbox" id="terms"
+                            class="mt-1 rounded border-slate-300 text-primary focus:ring-primary">
+                        <label for="terms" class="text-xs text-slate-500 leading-tight cursor-pointer">Confirm că am
+                            luat la cunoștință structura cursurilor și regulamentul universitar pentru anul în
+                            curs.</label>
+                    </div>
+
+                    <button id="signButt" onclick="signContract()"
+                        class="w-full py-3 bg-slate-200 text-slate-400 font-bold rounded-xl cursor-not-allowed transition-colors"
+                        disabled>
+                        SEMNEAZĂ DIGITAL
+                    </button>
+                    <p id="successMsg" class="text-green-600 text-xs font-bold text-center mt-3 hidden animate-pulse">
+                        Contract semnat cu succes! ✓</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const checkbox = document.getElementById('terms');
+        const button = document.getElementById('signButt');
+        const successMsg = document.getElementById('successMsg');
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                button.disabled = false;
+                button.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+                button.classList.add('bg-primary', 'text-white', 'hover:bg-red-800', 'shadow-lg');
+            } else {
+                button.disabled = true;
+                button.classList.add('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
+                button.classList.remove('bg-primary', 'text-white', 'hover:bg-red-800', 'shadow-lg');
+            }
+        });
+
+        function signContract() {
+            button.innerHTML = '<span class="material-icons-round animate-spin text-sm">refresh</span> Semnare...';
+            setTimeout(() => {
+                button.innerHTML = 'SEMNAT';
+                button.classList.remove('bg-primary', 'hover:bg-red-800');
+                button.classList.add('bg-green-600', 'hover:bg-green-700');
+                successMsg.classList.remove('hidden');
+
+                // Disable everything
+                checkbox.disabled = true;
+                button.disabled = true;
+
+                // Update Badge in Header
+                document.querySelector('.bg-yellow-100').className = 'px-3 py-1 bg-green-100 text-green-800 rounded-full font-bold text-xs flex items-center gap-1';
+                document.querySelector('.bg-green-100').innerHTML = '<span class="material-icons-round text-sm">check_circle</span> STATUS: SEMNAT';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

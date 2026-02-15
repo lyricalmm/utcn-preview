@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Facilități - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span>Noutăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span>Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span>Contracte</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span>Cantină</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span class="font-medium">Facilități</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span>Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h2 class="text-3xl font-bold dark:text-white">Facilități Campus</h2>
+                <p class="text-slate-500 dark:text-slate-400">Carduri Digitale & Acces</p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <!-- Digital ID Card (Flip Effect) -->
+            <div class="col-span-1 lg:col-span-1 xl:col-span-1 h-64 flip-card cursor-pointer group">
+                <div class="relative w-full h-full flip-card-inner rounded-2xl shadow-xl">
+                    <!-- Front -->
+                    <div
+                        class="absolute inset-0 w-full h-full bg-gradient-to-br from-primary to-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between flip-card-front backface-hidden">
+                        <div class="flex justify-between items-start">
+                            <span class="material-icons-round text-3xl opacity-80">school</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdm73R4GRE709YXdU4mofjCQweSvx5UqM-Ml0t93utMTVTKKFlXPsQToZ4GwMeJVynnuWQzMysEtvnG3DGiYiLPp_UY-xuuOGarOn2USlE8UNeokGiVibLIrZ5jKwiAZFS-Gf1EQYhVq3XTb6-pvDlPZcxmOYo_HwLwvXbNo5Xx1aUPm873EmjQOfdJ8xsJuoZv9o9fF6U5rMOkaDxeU6NQVKtTA128puRGgg26Gyg7C2mFdwAohmr_vy3daa1E5ALltJg5kEVy24"
+                                class="h-8 invert opacity-80">
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase opacity-70 mb-1">Student</p>
+                            <p class="font-bold text-xl tracking-wide">Răzvan Mihai C.</p>
+                            <p class="text-sm opacity-80 mt-1">Facultatea de AC</p>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div class="text-xs opacity-70">
+                                <p>Nr. Matricol</p>
+                                <p class="font-mono">30214589</p>
+                            </div>
+                            <div class="text-xs opacity-70 text-right">
+                                <p>Valabil</p>
+                                <p>09/26</p>
+                            </div>
+                        </div>
+                        <!-- Hint -->
+                        <div
+                            class="absolute bottom-2 right-2 flex items-center gap-1 text-[10px] opacity-60 animate-pulse">
+                            <span class="material-icons-round text-sm">touch_app</span>
+                            Rotire
+                        </div>
+                    </div>
+                    <!-- Back (QR) -->
+                    <div
+                        class="absolute inset-0 w-full h-full bg-white dark:bg-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center flip-card-back backface-hidden shadow-inner border border-slate-200 dark:border-slate-700">
+                        <p class="text-sm font-bold text-slate-800 dark:text-white mb-4">Scanează pentru Acces</p>
+                        <svg class="w-32 h-32 text-slate-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v2h-3v-2zm-3 2h2v2h-2v-2zm-3 2h3v2h-3v-2zm3 3h2v2h-2v-2zm-6-3h2v2h-2v-2zm3 3h2v2h-2v-2zm-6-3h2v2h-2v-2zM6 6h2v2H6V6zm14 14h-2v-2h2v2zm-6-6h2v2h-2v-2z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library Status -->
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <span class="material-icons-round">menu_book</span>
+                    </div>
+                    <h3 class="font-bold text-lg dark:text-white">Bibliotecă</h3>
+                </div>
+                <div class="space-y-4">
+                    <div
+                        class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm dark:text-slate-200">Algoritmi Fundamentali</h4>
+                            <span
+                                class="text-xs font-bold text-orange-500 bg-orange-100 dark:bg-orange-900/30 px-2 py-1 rounded">2
+                                Zile</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Termen: 17 Feb 2026</p>
+                    </div>
+                    <div
+                        class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-semibold text-sm dark:text-slate-200">Arhitectura Sistemelor</h4>
+                            <span
+                                class="text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">14
+                                Zile</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Termen: 28 Feb 2026</p>
+                    </div>
+                    <button
+                        class="w-full py-2 text-primary font-medium text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                        onclick="showToast('Se deschide catalogul online (Liberty)...')">Caută Cărți Noi</button>
+                </div>
+            </div>
+
+            <!-- Dorm Access -->
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                        <span class="material-icons-round">bedroom_parent</span>
+                    </div>
+                    <h3 class="font-bold text-lg dark:text-white">Cămin Studențesc</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800">
+                        <span class="text-slate-500">Locație</span>
+                        <span class="font-medium dark:text-white">Campus Observator</span>
+                    </div>
+                    <div class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800">
+                        <span class="text-slate-500">Cămin</span>
+                        <span class="font-medium dark:text-white">Cămin 4</span>
+                    </div>
+                    <div class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800">
+                        <span class="text-slate-500">Camera</span>
+                        <span class="font-medium dark:text-white">203</span>
+                    </div>
+                    <div class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800">
+                        <span class="text-slate-500">Status Plată</span>
+                        <span class="font-medium text-green-600">Achitat (Ian)</span>
+                    </div>
+                    <button
+                        class="w-full mt-2 py-2 bg-purple-600 text-white font-medium text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200 dark:shadow-none"
+                        onclick="showToast('Tichet creat: #8821 (Instalații Sanitare)')">Raportează Defecțiune</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2"></div>
+    <script>
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-800 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-full shadow-lg flex items-center gap-3 toast-enter mb-2';
+            toast.innerHTML = `<span class="text-sm font-medium">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+</body>
+
+</html>

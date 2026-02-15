@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Facultate - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span>Noutăți</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span class="font-medium">Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span>Contracte</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span>Cantină</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Facilități</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span>Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h2 class="text-3xl font-bold dark:text-white">Situație Școlară</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Anul III • Calculatoare și Tehnologia Informației
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="window.location.href='contracte.html'"
+                    class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-sm font-medium transition-colors">
+                    <span class="material-icons-round text-slate-500">assignment</span>
+                    Contracte Studii
+                </button>
+                <button onclick="showToast('Solicitare Adeverință trimisă!')"
+                    class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-red-800 shadow-lg shadow-primary/20 transition-colors">
+                    <span class="material-icons-round text-white">description</span>
+                    Solicită Adeverință
+                </button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <!-- Sidebar Stats & Averages -->
+            <div class="xl:col-span-1 space-y-6">
+                <!-- GPA Card (Multi-Average) -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                    <h3 class="font-bold text-lg mb-4 dark:text-white">Medii Acadimice</h3>
+
+                    <div class="space-y-6">
+                        <!-- Annual Average -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-bold text-primary uppercase tracking-wider">Media Anuală</p>
+                                <p class="text-xs text-slate-400">Ponderată / 60 ECTS</p>
+                            </div>
+                            <div class="text-2xl font-bold dark:text-white">7.85</div>
+                        </div>
+                        <div class="h-px bg-slate-100 dark:bg-slate-800 w-full"></div>
+
+                        <!-- Semester 1 -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium dark:text-slate-300">Semestrul 1</p>
+                                <p class="text-xs text-slate-400">30 ECTS</p>
+                            </div>
+                            <div class="font-bold text-lg text-green-600">8.20</div>
+                        </div>
+
+                        <!-- Semester 2 -->
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium dark:text-slate-300">Semestrul 2</p>
+                                <p class="text-xs text-slate-400">30 ECTS (În Curs)</p>
+                            </div>
+                            <div class="font-bold text-lg text-orange-500">7.50</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between text-sm mb-1 dark:text-slate-300">
+                            <span>Credite Totale</span>
+                            <span class="font-bold">160 / 240</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                            <div class="bg-primary h-2 rounded-full" style="width: 66%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Courses Sidebar with POPUP TRIGGER -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg dark:text-white">Orar Săptămânal</h3>
+                    </div>
+
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
+                        <span class="material-icons-round text-4xl text-slate-300 mb-2">calendar_today</span>
+                        <p class="text-sm font-medium dark:text-slate-300 mb-4">Vizualizează orarul complet pentru
+                            Semestrul 2 direct aici.</p>
+                        <button onclick="showScheduleModal()"
+                            class="w-full py-2 bg-primary text-white font-bold rounded-lg hover:bg-red-800 shadow-lg shadow-primary/20 transition-colors">
+                            DESCHIDE ORAR
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Table -->
+            <div
+                class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-lg dark:text-white">Carnet de Note</h3>
+                    <div class="flex gap-2">
+                        <select id="semester-selector" onchange="updateGrades()"
+                            class="bg-slate-50 dark:bg-slate-800 border-none text-sm rounded-lg px-3 py-1.5 dark:text-white cursor-pointer focus:ring-1 focus:ring-primary">
+                            <option value="sem1">Semestrul 1</option>
+                            <option value="sem2">Semestrul 2</option>
+                            <option value="an2">Anul 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr
+                                class="text-xs text-slate-400 uppercase border-b border-slate-100 dark:border-slate-800">
+                                <th class="font-bold py-3 px-2 w-1/2">Materie</th>
+                                <th class="font-bold py-3 px-2 text-center">Credite</th>
+                                <th class="font-bold py-3 px-2 text-center">Notă</th>
+                                <th class="font-bold py-3 px-2 text-center">Status</th>
+                                <th class="font-medium py-3 px-2"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="grades-body" class="text-sm">
+                            <!-- Content injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Subject Details Modal -->
+    <div id="subject-modal"
+        class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl max-w-lg w-full transform scale-95 transition-transform duration-300"
+            id="modal-content">
+            <h3 class="text-2xl font-bold dark:text-white mb-2" id="modal-course-name">Nume Materie</h3>
+            <div class="flex items-center gap-2 mb-6">
+                <span
+                    class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded"
+                    id="modal-credits">5 ECTS</span>
+                <span
+                    class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded">Exam</span>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium dark:text-white">Notă Laborator</span>
+                        <span class="font-bold text-primary">8.50</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium dark:text-white">Notă Examen</span>
+                        <span class="font-bold text-primary" id="modal-exam-grade">7.00</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModal()"
+                    class="px-6 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-white font-bold rounded-lg transition-colors">Închide</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCHEDULE MODAL -->
+    <div id="schedule-modal"
+        class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-2xl max-w-4xl w-full h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300 scrollbar-hide"
+            id="schedule-modal-content">
+            <div
+                class="flex justify-between items-start mb-6 sticky top-0 bg-white dark:bg-slate-900 z-10 pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div>
+                    <h2 class="text-2xl font-bold dark:text-white">Orar Semestrul 2</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">2026/2026 • Seria A • Grupa 30214</p>
+                </div>
+                <button onclick="closeScheduleModal()"
+                    class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+                    <span class="material-icons-round text-2xl">close</span>
+                </button>
+            </div>
+
+            <div class="overflow-x-auto pb-4">
+                <div class="min-w-[700px] grid grid-cols-5 gap-4">
+                    <!-- Headers -->
+                    <div class="text-center font-bold pb-2 border-b-2 border-primary text-primary">Luni</div>
+                    <div
+                        class="text-center font-bold pb-2 border-b-2 border-slate-200 dark:border-slate-700 text-slate-500">
+                        Marți</div>
+                    <div
+                        class="text-center font-bold pb-2 border-b-2 border-slate-200 dark:border-slate-700 text-slate-500">
+                        Miercuri</div>
+                    <div
+                        class="text-center font-bold pb-2 border-b-2 border-slate-200 dark:border-slate-700 text-slate-500">
+                        Joi</div>
+                    <div
+                        class="text-center font-bold pb-2 border-b-2 border-slate-200 dark:border-slate-700 text-slate-500">
+                        Vineri</div>
+
+                    <!-- Monday -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl border border-blue-100 dark:border-blue-800">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 block mb-1">10:00 -
+                                12:00</span>
+                            <h4 class="font-bold text-sm leading-tight dark:text-white">Inginerie Software</h4>
+                            <p class="text-xs text-slate-500 mt-1">Curs • Sala A03</p>
+                        </div>
+                        <div
+                            class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-xl border border-purple-100 dark:border-purple-800">
+                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 block mb-1">14:00 -
+                                16:00</span>
+                            <h4 class="font-bold text-sm leading-tight dark:text-white">Baze de Date</h4>
+                            <p class="text-xs text-slate-500 mt-1">Lab • Sala L3</p>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-xl border border-orange-100 dark:border-orange-800">
+                            <span class="text-xs font-bold text-orange-600 dark:text-orange-400 block mb-1">08:00 -
+                                10:00</span>
+                            <h4 class="font-bold text-sm leading-tight dark:text-white">Grafică pe Calculator</h4>
+                            <p class="text-xs text-slate-500 mt-1">Curs • Sala M01</p>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl border border-blue-100 dark:border-blue-800">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 block mb-1">10:00 -
+                                12:00</span>
+                            <h4 class="font-bold text-sm leading-tight dark:text-white">Arhitectura Calculatoarelor</h4>
+                            <p class="text-xs text-slate-500 mt-1">Curs • Sala C01</p>
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-xl border border-purple-100 dark:border-purple-800">
+                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 block mb-1">14:00 -
+                                16:00</span>
+                            <h4 class="font-bold text-sm leading-tight dark:text-white">Inginerie Software</h4>
+                            <p class="text-xs text-slate-500 mt-1">Proiect • Sala P04</p>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl border border-slate-100 dark:border-slate-700 flex flex-col items-center justify-center text-center opacity-70">
+                            <span class="material-icons-round text-3xl mb-2 text-slate-300">weekend</span>
+                            <span class="text-sm font-medium">Zi Liberă</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <button onclick="window.location.href='orar.html'"
+                    class="text-primary font-bold text-sm hover:underline">Vezi detalii complete și descărcare
+                    PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        const semesterData = {
+            'sem1': [
+                { name: 'Calculatoare Numerice', type: 'Examen', credits: 5, grade: '8', status: 'PROMOVAT' },
+                { name: 'Proiectare Logică', type: 'Colocviu', credits: 6, grade: '9', status: 'PROMOVAT' },
+                { name: 'Programare Asamblare', type: 'Examen', credits: 5, grade: '6', status: 'PROMOVAT' },
+                { name: 'Electronică Analogică', type: 'Restanță', credits: 6, grade: '4', status: 'PICAT' },
+                { name: 'Limba Engleză', type: 'Opțional', credits: 2, grade: '10', status: 'PROMOVAT' }
+            ],
+            'sem2': [
+                { name: 'Arhitectura Calculatoarelor', type: 'Examen', credits: 6, grade: '-', status: 'ÎN CURS' },
+                { name: 'Inginerie Software', type: 'Proiect', credits: 5, grade: '-', status: 'ÎN CURS' },
+                { name: 'Baze de Date', type: 'Laborator', credits: 5, grade: '-', status: 'ÎN CURS' },
+                { name: 'Sisteme de Operare', type: 'Examen', credits: 5, grade: '-', status: 'ÎN CURS' },
+                { name: 'Grafică pe Calculator', type: 'Laborator', credits: 4, grade: '-', status: 'ÎN CURS' }
+            ],
+            'an2': [
+                { name: 'Programare Orientată pe Obiecte', type: 'Examen', credits: 6, grade: '10', status: 'PROMOVAT' },
+                { name: 'Structuri de Date', type: 'Examen', credits: 6, grade: '9', status: 'PROMOVAT' },
+                { name: 'Matematici Speciale', type: 'Examen', credits: 5, grade: '8', status: 'PROMOVAT' },
+                { name: 'Teoria Sistemelor', type: 'Colocviu', credits: 5, grade: '7', status: 'PROMOVAT' },
+                { name: 'Electronică Digitală', type: 'Laborator', credits: 4, grade: '8', status: 'PROMOVAT' }
+            ]
+        };
+
+        function updateGrades() {
+            const selector = document.getElementById('semester-selector');
+            const selected = selector.value;
+            const data = semesterData[selected];
+            const tbody = document.getElementById('grades-body');
+
+            tbody.innerHTML = '';
+
+            data.forEach(item => {
+                let statusClass = 'bg-green-100 text-green-700';
+                let gradeClass = 'text-green-600';
+
+                if (item.status === 'PICAT') {
+                    statusClass = 'bg-red-100 text-red-700';
+                    gradeClass = 'text-red-500';
+                } else if (item.status === 'ÎN CURS') {
+                    statusClass = 'bg-slate-100 text-slate-600';
+                    gradeClass = 'text-slate-400';
+                }
+
+                const row = `
+                    <tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border-b border-slate-50 dark:border-slate-800/50">
+                        <td class="py-4 px-2">
+                            <p class="font-bold dark:text-white">${item.name}</p>
+                            <p class="text-xs text-slate-500">${item.type}</p>
+                        </td>
+                        <td class="py-4 px-2 text-center dark:text-slate-300">${item.credits}</td>
+                        <td class="py-4 px-2 text-center">
+                            <span class="font-bold text-lg ${gradeClass}">${item.grade}</span>
+                        </td>
+                        <td class="py-4 px-2 text-center">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${statusClass}">${item.status}</span>
+                        </td>
+                        <td class="py-4 px-2 text-right">
+                            <button class="text-slate-400 hover:text-primary transition-colors" onclick="showSubjectDetails('${item.name}')">Details</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-800 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-full shadow-lg flex items-center gap-3 toast-enter mb-2';
+            toast.innerHTML = `<span class="text-sm font-medium">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function showSubjectDetails(name) {
+            const modal = document.getElementById('subject-modal');
+            const content = document.getElementById('modal-content');
+
+            document.getElementById('modal-course-name').textContent = name;
+
+            // Randomize grade slightly for effect or leave static
+            document.getElementById('modal-exam-grade').textContent = (Math.random() * (10 - 5) + 5).toFixed(2);
+
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('subject-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function showScheduleModal() {
+            const modal = document.getElementById('schedule-modal');
+            const content = document.getElementById('schedule-modal-content');
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            });
+        }
+
+        function closeScheduleModal() {
+            const modal = document.getElementById('schedule-modal');
+            const content = document.getElementById('schedule-modal-content');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Init with Sem 1
+        window.addEventListener('DOMContentLoaded', () => {
+            updateGrades();
+        });
+    </script>
+</body>
+
+</html>

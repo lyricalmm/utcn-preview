@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stiri - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span class="font-medium">Noutăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span>Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span>Contracte</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span>Cantină</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Facilități</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span>Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h2 class="text-3xl font-bold dark:text-white">Noutăți UTCN</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Ultimele anunțuri și evenimente academice</p>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">Toate</button>
+                <button
+                    class="px-3 py-1 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-sm font-medium transition-colors">Academic</button>
+                <button
+                    class="px-3 py-1 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-sm font-medium transition-colors">Evenimente</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Featured Article (Span 2) -->
+            <div class="lg:col-span-2 group cursor-pointer" onclick="openArticleModal('hackathon')">
+                <div
+                    class="relative h-64 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200 dark:border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c54be3855833?auto=format&fit=crop&w=1200&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-4 left-4 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+                        EVENIMENT</div>
+                </div>
+                <h3 class="text-2xl font-bold dark:text-white mb-2 group-hover:text-primary transition-colors">Înscrieri
+                    deschise pentru Hackathon-ul EUt+ 2026</h3>
+                <p class="text-slate-500 dark:text-slate-400 line-clamp-2">Universitatea Tehnică din Cluj-Napoca
+                    organizează ediția anuală a hackathon-ului internațional. Studenții sunt invitați să propună soluții
+                    inovatoare pentru orașe inteligente.</p>
+                <div class="flex items-center gap-2 mt-3 text-xs text-slate-400">
+                    <span class="material-icons-round text-sm">calendar_today</span> 14 Feb 2026
+                    <span>•</span>
+                    <span>Lectură 3 min</span>
+                </div>
+            </div>
+
+            <!-- Sidebar List -->
+            <div class="space-y-6">
+                <div class="group cursor-pointer border-b border-slate-100 dark:border-slate-800 pb-4"
+                    onclick="openArticleModal('bursa')">
+                    <span
+                        class="text-xs font-bold text-blue-600 bg-blue-50 dark:bg-blue-900/10 px-2 py-0.5 rounded mb-2 inline-block">ADMINISTRATIV</span>
+                    <h4 class="font-bold dark:text-white group-hover:text-primary transition-colors mb-1">Listele
+                        preliminare pentru burse au fost publicate</h4>
+                    <p class="text-xs text-slate-500 line-clamp-2">Termenul de contestații este până pe 20 Februarie.
+                        Verificați listele la secretariat.</p>
+                </div>
+
+                <div class="group cursor-pointer border-b border-slate-100 dark:border-slate-800 pb-4"
+                    onclick="window.open('https://utcluj.ro', '_blank')">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span
+                            class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/10 px-2 py-0.5 rounded">EXTERN</span>
+                        <span class="material-icons-round text-[10px] text-slate-400">open_in_new</span>
+                    </div>
+                    <h4 class="font-bold dark:text-white group-hover:text-primary transition-colors mb-1">Parteneriat
+                        nou cu Bosch pentru stagii de practică</h4>
+                    <p class="text-xs text-slate-500 line-clamp-2">Oportunități noi de internship pentru studenții de la
+                        AC și ETTI.</p>
+                </div>
+
+                <div class="group cursor-pointer pb-4" onclick="openArticleModal('sesiune')">
+                    <span
+                        class="text-xs font-bold text-orange-600 bg-orange-50 dark:bg-orange-900/10 px-2 py-0.5 rounded mb-2 inline-block">ACADEMIC</span>
+                    <h4 class="font-bold dark:text-white group-hover:text-primary transition-colors mb-1">Structura
+                        anului universitar 2026-2027</h4>
+                    <p class="text-xs text-slate-500 line-clamp-2">Calendarul aprobat de Senat pentru anul viitor.</p>
+                </div>
+            </div>
+
+            <!-- Grid Items -->
+            <div
+                class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+                <div class="group cursor-pointer bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-all"
+                    onclick="openArticleModal('cerc')">
+                    <div class="h-40 rounded-lg bg-slate-100 mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-bold dark:text-white mb-2">Cercuri Științifice Studențești</h4>
+                    <p class="text-xs text-slate-500 line-clamp-3">Înscrierile pentru sesiunea de comunicări științifice
+                        au început. Premii atractive pentru cele mai bune lucrări.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Article Modal -->
+    <div id="article-modal"
+        class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-2xl max-w-2xl w-full h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300 scrollbar-hide"
+            id="modal-content">
+            <div class="flex justify-end sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm py-2 z-10">
+                <button onclick="closeArticleModal()"
+                    class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+                    <span class="material-icons-round text-slate-600 dark:text-slate-300">close</span>
+                </button>
+            </div>
+
+            <div id="article-body">
+                <!-- Content injected via JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const articles = {
+            'hackathon': {
+                title: 'Înscrieri deschise pentru Hackathon-ul EUt+ 2026',
+                image: 'https://images.unsplash.com/photo-1504384308090-c54be3855833?auto=format&fit=crop&w=1200&q=80',
+                date: '14 Feb 2026',
+                content: `
+                    <p class="font-serif text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">Universitatea Tehnică din Cluj-Napoca, membră a alianței EUt+, anunță deschiderea înscrierilor pentru ediția 2026 a hackathon-ului internațional dedicat soluțiilor Smart City.</p>
+                    <h3 class="font-bold text-xl mb-3 dark:text-white">Despre Competiție</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Evenimentul va avea loc în perioada 15-17 Martie la hub-ul de inovare al universității. Echipele vor avea la dispoziție 48 de ore pentru a dezvolta un prototip funcțional.</p>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400 mb-6">
+                        <li>Premiul I: 2000 EUR</li>
+                        <li>Premiul II: 1000 EUR</li>
+                        <li>Acces la mentori din industrie</li>
+                    </ul>
+                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-black transition-colors" onclick="alert('Te-ai înscris cu succes!')">Înscrie-te Acum</button>
+                `
+            },
+            'bursa': {
+                title: 'Listele preliminare pentru burse - Semestrul 2',
+                image: '', // no image
+                date: '12 Feb 2026',
+                content: `
+                    <p class="font-serif text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">Serviciul Social a publicat listele preliminare cu studenții beneficiari de burse de performanță și sociale.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Contestațiile se pot depune fizic la secretariat sau online prin platforma webservice până la data de 20 Februarie, ora 14:00.</p>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-xl border border-yellow-100 dark:border-yellow-800 mb-4">
+                        <p class="text-sm text-yellow-800 dark:text-yellow-200 font-bold">Important: Studenții trebuie să verifice contul IBAN în platforma de Plăți.</p>
+                    </div>
+                `
+            },
+            'sesiune': {
+                title: 'Calendar Academic 2026-2027',
+                image: '', // no image
+                date: '10 Feb 2026',
+                content: `
+                    <p class="font-serif text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">Senatul Universității a aprobat structura anului universitar viitor.</p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Anul universitar va începe luni, 28 Septembrie 2026.</p>
+                `
+            }
+        };
+
+        function openArticleModal(id) {
+            const data = articles[id];
+            if (!data) return; // Fallback or handle differently
+
+            const contentDiv = document.getElementById('article-body');
+            let html = '';
+
+            if (data.image) {
+                html += `<img src="${data.image}" class="w-full h-64 object-cover rounded-xl mb-6">`;
+            }
+
+            html += `
+                <h2 class="text-3xl font-bold dark:text-white mb-2 leading-tight">${data.title}</h2>
+                <p class="text-sm text-slate-400 mb-6">${data.date} • UTCN News</p>
+                <div class="article-content">${data.content}</div>
+            `;
+
+            contentDiv.innerHTML = html;
+
+            const modal = document.getElementById('article-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            });
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('article-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

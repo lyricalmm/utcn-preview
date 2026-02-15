@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Plăți - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+
+        .toast-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span>Noutăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span>Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span>Contracte</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span>Cantină</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Facilități</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span class="font-medium">Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h2 class="text-3xl font-bold dark:text-white">Situație Financiară</h2>
+                <div class="flex items-center gap-2 mt-1">
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Cont IBAN Virtual: RO25UTCN...</p>
+                    <button class="text-primary text-xs font-bold hover:underline"
+                        onclick="navigator.clipboard.writeText('RO25UTCN...'); showToast('Copiat în clipboard');">COPIAZĂ</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <!-- Pending Payments -->
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 dark:text-white">
+                    <span class="material-icons-round text-orange-500">pending_actions</span>
+                    De Plată
+                </h3>
+
+                <div class="space-y-4">
+                    <!-- Fee Item -->
+                    <div
+                        class="bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800/30 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <h4 class="font-bold dark:text-white">Taxă Cămin - Februarie</h4>
+                            <p class="text-sm text-slate-500 mb-1">Scadență: 15 Feb 2026</p>
+                            <span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300">NEACHITAT</span>
+                        </div>
+                        <div class="flex flex-col items-end gap-2 text-right w-full sm:w-auto">
+                            <span class="text-2xl font-bold text-slate-800 dark:text-white">200.00 RON</span>
+                            <button
+                                class="px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-black transition-colors md:w-auto w-full"
+                                onclick="showModal()">PLĂTEȘTE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment History -->
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2 dark:text-white">
+                    <span class="material-icons-round text-green-600">history</span>
+                    Istoric Tranzacții
+                </h3>
+
+                <div class="space-y-0 divide-y divide-slate-100 dark:divide-slate-800">
+                    <div class="py-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 -mx-4 px-4 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+                                    <span class="material-icons-round">home</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium dark:text-white">Taxă Cămin - Ianuarie</p>
+                                    <p class="text-xs text-slate-400">12 Ian 2026, 14:30</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-slate-700 dark:text-slate-300">- 200.00 RON</span>
+                        </div>
+                    </div>
+
+                    <div class="py-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 -mx-4 px-4 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+                                    <span class="material-icons-round">restaurant</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium dark:text-white">Încărcare Card Cantină</p>
+                                    <p class="text-xs text-slate-400">08 Ian 2026, 09:15</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-slate-700 dark:text-slate-300">- 50.00 RON</span>
+                        </div>
+                    </div>
+
+                    <div class="py-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 -mx-4 px-4 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+                                    <span class="material-icons-round">school</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium dark:text-white">Taxă Școlarizare - Tranșa 1</p>
+                                    <p class="text-xs text-slate-400">15 Oct 2025</p>
+                                </div>
+                            </div>
+                            <span class="font-bold text-slate-700 dark:text-slate-300">- 1400.00 RON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Simulation Modal -->
+    <div id="payment-modal"
+        class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-2xl max-w-sm w-full transform scale-95 transition-transform duration-300"
+            id="modal-content">
+            <div class="flex flex-col items-center text-center">
+                <div
+                    class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 text-primary">
+                    <span class="material-icons-round text-3xl">lock</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Portal Plată</h3>
+                <p class="text-slate-500 mb-6 text-sm">Aceasta este o simulare. În versiunea live, vei fi redirecționat
+                    către procesatorul de plăți (EuPlatesc.ro).</p>
+                <button onclick="closeModal()"
+                    class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-black transition-colors">Am
+                    Înțeles</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-800 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-full shadow-lg flex items-center gap-3 toast-enter mb-2';
+            toast.innerHTML = `<span class="text-sm font-medium">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function showModal() {
+            const modal = document.getElementById('payment-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('payment-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

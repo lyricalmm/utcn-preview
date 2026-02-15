@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cantina - UTCN Student</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#A6192E",
+                        secondary: "#2D2926",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar-item-active {
+            background-color: rgba(166, 25, 46, 0.1);
+            color: #A6192E;
+            border-right: 4px solid #A6192E;
+        }
+
+        .cantina-tab-active {
+            background-color: #A6192E;
+            color: white;
+            border-color: #A6192E;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+
+    <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-20">
+        <div class="p-6 flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+                <span class="material-icons-round text-white text-2xl">school</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-tight">me.utcluj</h1>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Student Buddy</p>
+            </div>
+        </div>
+        <nav class="flex-1 mt-4 px-3 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="code.html">
+                <span class="material-icons-round">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="stiri.html">
+                <span class="material-icons-round">feed</span>
+                <span>Noutăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facultate.html">
+                <span class="material-icons-round">account_balance</span>
+                <span>Facultate</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="orar.html">
+                <span class="material-icons-round">calendar_today</span>
+                <span>Orar</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="contracte.html">
+                <span class="material-icons-round">assignment</span>
+                <span>Contracte</span>
+            </a>
+            <a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all group"
+                href="cantina.html">
+                <span class="material-icons-round">restaurant</span>
+                <span class="font-medium">Cantină</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="facilitati.html">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Facilități</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="plati.html">
+                <span class="material-icons-round">payments</span>
+                <span>Plăți</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all group"
+                href="magazin.html">
+                <span class="material-icons-round">shopping_bag</span>
+                <span>Magazin</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 flex-1 p-8 pb-24">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div>
+                <h2 class="text-3xl font-bold dark:text-white">Meniul Zilei</h2>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-bold">DESCHIS</span>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Astăzi, 15 Februarie 2026</p>
+                </div>
+            </div>
+
+            <!-- Location Tabs -->
+            <div
+                class="bg-white dark:bg-slate-800 p-1 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex">
+                <button onclick="switchTab('observator')" id="tab-observator"
+                    class="cantina-tab-active px-4 py-2 rounded-lg text-sm font-medium transition-all">Observator</button>
+                <button onclick="switchTab('marasti')" id="tab-marasti"
+                    class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">Mărăști</button>
+                <button onclick="switchTab('muncii')" id="tab-muncii"
+                    class="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">Bd.
+                    Muncii</button>
+            </div>
+        </header>
+
+        <!-- Observator Menu -->
+        <div id="content-observator"
+            class="menu-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">MENIU
+                        STUDENT</span>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Ciorbă Rădăuțeană</h3>
+                        <span class="text-primary font-bold">8.50 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">400g • Oțet/Smântână incluse</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Gordon Bleu</h3>
+                        <span class="text-primary font-bold">15.00 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">200g • Pui, Șuncă, Cașcaval</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1618416692128-4ce315e2197d?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Piure cu Trufe</h3>
+                        <span class="text-primary font-bold">6.00 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">200g • Garnitură Premium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marasti Menu -->
+        <div id="content-marasti"
+            class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1572656631137-793529d6f274?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Supă Cremă Linte</h3>
+                        <span class="text-primary font-bold">7.00 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">350ml • Cu crutoane</p>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span
+                        class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">SPECIALITATE</span>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Pui Shanghai</h3>
+                        <span class="text-primary font-bold">14.50 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">200g • Sos soia inclus</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Muncii Menu -->
+        <div id="content-muncii"
+            class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b485c?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Ciorbă Perișoare</h3>
+                        <span class="text-primary font-bold">9.00 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">400ml • Rețetă tradițională</p>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-slate-200 dark:border-slate-800 group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1599354607476-8868df3ff9f3?auto=format&fit=crop&w=500&q=80"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold dark:text-white">Tochitură</h3>
+                        <span class="text-primary font-bold">16.00 RON</span>
+                    </div>
+                    <p class="text-xs text-slate-500">250g • Cu mămăliguță</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        function switchTab(location) {
+            document.querySelectorAll('.menu-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`content-${location}`).classList.remove('hidden');
+
+            document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('cantina-tab-active');
+                btn.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-50', 'dark:hover:bg-slate-700');
+
+                if (btn.id === `tab-${location}`) {
+                    btn.classList.add('cantina-tab-active');
+                } else {
+                    btn.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-50', 'dark:hover:bg-slate-700');
+                }
+            });
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-800 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-full shadow-lg flex items-center gap-3 toast-enter mb-2';
+            toast.innerHTML = `<span class="text-sm font-medium">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+</body>
+
+</html>
